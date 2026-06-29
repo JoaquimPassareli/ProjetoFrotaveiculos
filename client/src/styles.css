@@ -1,0 +1,290 @@
+:root {
+	color-scheme: light;
+	--bg: #eef3f8;
+	--surface: #ffffff;
+	--text: #1c2a36;
+	--muted: #607080;
+	--accent: #1f6aa8;
+	--accent-strong: #195787;
+	--border: #d4dde7;
+	--shadow: 0 10px 30px rgba(18, 44, 72, 0.08);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	background: radial-gradient(
+		circle at 0% 0%,
+		#f8fbff 0%,
+		#edf3fa 48%,
+		#e7eef7 100%
+	);
+	color: var(--text);
+}
+
+.page {
+	min-height: 100vh;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 34px 28px 42px;
+}
+
+.header {
+	margin-bottom: 30px;
+	background: linear-gradient(135deg, #204f7a 0%, #2d7cb4 58%, #67a9d6 100%);
+	color: #f5fbff;
+	border: none;
+	border-radius: 18px;
+	padding: 28px 30px;
+	box-shadow: var(--shadow);
+}
+
+.header h1 {
+	margin: 0 0 10px;
+	font-size: clamp(1.7rem, 2vw, 2.1rem);
+	letter-spacing: 0.2px;
+}
+
+.header p {
+	margin: 0;
+	color: rgba(244, 250, 255, 0.9);
+	font-size: 1rem;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: 22px;
+}
+
+.card {
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 16px;
+	padding: 22px;
+	box-shadow: var(--shadow);
+}
+
+.card h2,
+.card h3 {
+	margin-top: 0;
+	margin-bottom: 14px;
+}
+
+.card-wide {
+	grid-column: 1 / -1;
+}
+
+.form {
+	display: grid;
+	gap: 12px;
+}
+
+input,
+select,
+button {
+	width: 100%;
+	border-radius: 10px;
+	border: 1px solid var(--border);
+	padding: 12px 13px;
+	font: inherit;
+}
+
+input,
+select {
+	background: #fbfdff;
+}
+
+button {
+	background: var(--accent);
+	color: #fff;
+	border: none;
+	cursor: pointer;
+	font-weight: 600;
+	transition:
+		background-color 0.2s ease,
+		transform 0.15s ease;
+}
+
+button:hover {
+	background: var(--accent-strong);
+	transform: translateY(-1px);
+}
+
+.dashboard-header {
+	display: flex;
+	gap: 14px;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+}
+
+.stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 14px;
+	margin: 14px 0 24px;
+}
+
+.stats article {
+	border: 1px solid var(--border);
+	border-radius: 10px;
+	padding: 14px 12px;
+	background: #f9fcff;
+}
+
+.stats p {
+	margin-top: 6px;
+	margin-bottom: 0;
+}
+
+.maintenance-list {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 6px;
+	display: grid;
+	gap: 10px;
+}
+
+.maintenance-list li {
+	border: 1px solid var(--border);
+	border-radius: 10px;
+	padding: 12px;
+	display: grid;
+	grid-template-columns: 120px 1fr 140px 120px auto;
+	gap: 10px;
+	align-items: center;
+	background: #fcfdff;
+}
+
+.acoes-formulario {
+	display: flex;
+	gap: 8px;
+}
+
+.acoes-formulario button {
+	width: auto;
+}
+
+.acoes-item {
+	display: flex;
+	gap: 6px;
+	justify-content: flex-end;
+}
+
+.acoes-item button {
+	width: auto;
+	min-width: 80px;
+	padding: 9px 12px;
+}
+
+.botao-secundario {
+	background: #2d7cb4;
+}
+
+.botao-secundario:hover {
+	background: #204f7a;
+}
+
+.botao-perigo {
+	background: #b63a3a;
+}
+
+.botao-perigo:hover {
+	background: #8f2f2f;
+}
+
+.filters {
+	margin-bottom: 16px;
+	display: flex;
+	gap: 16px;
+	flex-wrap: wrap;
+}
+
+.filters label {
+	display: grid;
+	gap: 6px;
+	min-width: 240px;
+}
+
+.filtros-tempo {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+	gap: 12px;
+	width: 100%;
+	padding: 12px;
+	border: 1px solid var(--border);
+	border-radius: 12px;
+	background: #f8fbff;
+}
+
+.filtros-tempo-acoes {
+	display: flex;
+	gap: 8px;
+	align-items: end;
+	flex-wrap: wrap;
+}
+
+.filtros-tempo-acoes button {
+	width: auto;
+	min-width: 132px;
+}
+
+.totals p {
+	margin: 10px 0;
+}
+
+.highlight {
+	font-size: 1.2rem;
+	font-weight: 700;
+	padding-top: 4px;
+}
+
+@media (max-width: 780px) {
+	.page {
+		padding: 18px 14px 24px;
+	}
+
+	.header {
+		padding: 22px 18px;
+		margin-bottom: 22px;
+	}
+
+	.grid {
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+
+	.card {
+		padding: 16px;
+	}
+
+	.maintenance-list li {
+		grid-template-columns: 1fr;
+	}
+
+	.acoes-formulario {
+		flex-direction: column;
+	}
+
+	.acoes-item {
+		justify-content: flex-start;
+	}
+
+	.filtros-tempo {
+		grid-template-columns: 1fr;
+	}
+
+	.filtros-tempo-acoes {
+		align-items: stretch;
+	}
+
+	.filtros-tempo-acoes button {
+		width: 100%;
+	}
+}
